@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Flipkart | WishMan</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!--    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#"><img src="http://img5a.flixcart.com/www/promos/new/20150521-151534-flipkart-logo.png" /></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1 style="color:#fdd922;">Be The WishMan</h1>
+                        <h3>Ab Har Wish Karo Poori</h3>
+                        <hr class="intro-divider">
+                        <h3>How much you want to donate ?</h3>
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="#contact" id="fivehundBtn" class="btn btn-default btn-lg">&#8377;<span class="network-name">500</span></a>
+                            </li>
+                            <li>
+                                <a id="onethBtn" href="#contact" class="btn btn-default btn-lg">&#8377; <span class="network-name">1000</span></a>
+                            </li>
+                            <li>
+                                <a id="twothBtn" href="#contact" class="btn btn-default btn-lg">&#8377;<span class="network-name">2000</span></a>
+                            </li>
+                             <li>
+                                <p  id="otherBtn"  class="btn btn-default btn-lg"><span class="network-name">Other</span></p>
+                            </li>
+                        </ul>
+                        <div id="inpText" style="display:none;">
+                            <input  id="inpTextdata"  type="text" style="font-size:28px;color:#006cb4;height:40px;width:350px;"  value="Rs. " />
+                            <input type="submit" style="font-size:28px;color:#006cb4;height:40px;width:200px;" id="submitBtn" name="submitBtn"  />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+
+	
+    <a  name="contact"></a>
+    <div class="banner">
+
+        <div class="container" align="center">
+            
+            <div id="tableList"></div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#services">Services</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; Flipkart 2015. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+    $( document ).ready(function() {
+    
+        var server_url="http://localhost:8080/wishman/rest/ngo/list/";
+      
+        $("#otherBtn").on('click', function(){
+            console.log("gg");
+              $(".intro-social-buttons").hide();
+              $("#inpText").show();
+        });
+        
+        $("#submitBtn").on('click', function(){
+              console.log("hy");
+              var inD =$("#inpTextdata").val();
+              var inD2=inD.replace("Rs.","").trim();
+            console.log(inD2);
+              populateData(inD2);
+        });
+        
+         $(".btn-default").on('click', function(){
+            console.log("h1h1");  
+             var btnid =this.id;
+             if(btnid == 'fivehundBtn')
+                  populateData(500);
+             else if(btnid == 'onethBtn')
+                 populateData(1000);
+             else if(btnid == 'twothBtn')
+                 populateData(2000);
+             else {
+                 
+             }
+             
+        });
+        
+        function populateData(val) {
+         
+              $.ajax({
+            type: 'GET',            
+            url: server_url+val,
+            dataType: 'json',
+    
+            crossDomain: true,
+            success: function (result) {   
+                console.log(result);
+                
+                var data="<table class='spacing-table' style='width:80%;margin:10px;' cellspacing='10' cellpadding='10'>";
+                
+                for(i=0;i<result.count;i++) {
+                if(i%2==0)
+                   data=data+" <tr style='background-color:#f77f2f '>";
+                else
+                    data=data+" <tr style='background-color:#53A6DE '>";
+                    
+                data=data+"<td align='center'><img src='"+result.list[i]["kid_pic"]+"' width='150' height='150'  style='border-radius:10%;'></td><td align='left'>"+result.list[i]["kid_name"]+"</td><td ><img src='img/favorite.png' width='50' /></td><td align='center'><a target='_blank' href='"+result.list[i]["produc_url"]+"' ><img style='border-radius:10%;' src='"+result.list[i]["produc_img"]+"' width='150' height='150'></a></td><td style='font-size:20px;'> &#8377; "+result.list[i]["product_price"]+"</td><td ><a href='"+result.list[i]["produc_url"]+"' target='_blank' class='btn btn-default btn-lg'><span class='network-name'>BUY FOR";
+                if(result.list[i]["kid_gender"] == 'male')    
+                    data=data+" HIM";
+                else
+                    data=data+" HER";
+                    
+                   data=data+"</span></a></td></tr> ";
+                }
+        data=data+"</table>";
+                //console.log(data);
+                $("#tableList").html(data);
+
+                
+                
+                
+            },
+            error: function (xhr, errorText) {
+                console.log('Error ' + xhr.responseText);
+            }
+        });
+             
+            
+            
+        }
+        
+        
+    });
+    </script>
+    
+    <style>
+    .spacing-table {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 15px;
+    border-collapse: separate;
+    border-spacing: 0 5px; /* this is the ultimate fix */
+}
+.spacing-table th {
+    text-align: left;
+    padding: 5px 15px;
+}
+.spacing-table td {
+    border-width: 1px 0;
+    border-color: #1abc9c;
+    border-style: solid;
+    
+    color: white;
+    padding: 5px 15px;
+}
+.spacing-table td:first-child {
+    border-left-width: 1px;
+    border-radius: 5px 0 0 5px;
+}
+.spacing-table td:last-child {
+    border-right-width: 1px;
+    border-radius: 0 5px 5px 0;
+}
+    
+    
+    
+    </style>
+</body>
+
+</html>
